@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-CN">
+  <head>
+    <title>小乐的柠檬水空间</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="柠檬水IO空间" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For Github IO Page displaying ICO on firefox problem -->
+    <!-- Not so clear on Brave -->
+    <!-- If React, Vue, Angular, just rel=icon and href=/favicon.ico can be OK -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico?" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="./static/css/toggle_switch.css" />
+    <link rel="stylesheet" href="./static/css/slide_show.css" />
+    <script type="text/javascript" src="./static/js/toggle_switch.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <!--Header-->
+      <div class="header">
+        <div class="header_bar">
+          <!--A Rounded Toggle Switch-->
+          <!--Reference: W3School How To-->
+          <!-- Temporarily abandon it because multi language is not my need now... -->
+          <div style="display: flex">
+            <div style="margin: auto">
+              <label class="toggle_switch">
+                <input
+                  type="checkbox"
+                  class="toggle_check"
+                  onclick="language_switch()"
+                />
+                <span class="round_slider round"
+                  >ZH&nbsp;&nbsp;&nbsp;&nbsp;EN</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="header_title">
+            <span lang="zh">柠檬水空间</span>
+            <span lang="en">Lemonade Space</span>
+          </div>
+          <div class="header_description">
+            <span lang="zh"> 柠檬水是青春的味道</span>
+            <span lang="en">Lemonade Tastes Youth</span>
+          </div>
+        </div>
+      </div>
+      <!--Self Introduction-->
+      <div class="main_intro">
+        <div class="self_intro">
+          <div class="block_title">
+            <span lang="zh">个人介绍</span>
+            <span lang="en">Self Introduction</span>
+          </div>
+          <div class="intro_block">
+            <div class="flex_block2">
+              <div class="flex_block1">
+                <div class="flex_intro1">
+                  <div>
+                    <b>
+                      <span style="font-size: 36px" lang="zh">小乐</span>
+                      <span style="font-size: 36px" lang="en">Xiaole</span>
+                    </b>
+                  </div>
+                  <div style="margin: auto">
+                    <span style="font-size: larger" lang="zh">9月3日</span>
+                    <span style="font-size: larger" lang="en"
+                      >September 3rd</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <b>
+                    <span lang="zh">本科-USST-数据科学与大数据专业</span>
+                    <span lang="en">Undergraduate-USST-Data Science</span>
+                  </b>
+                </div>
+              </div>
+              <div class="flex_block1">
+                <div>
+                  <b>
+                    <span style="font-size: larger">Email：</span>
+                    <span>zxl14285731415@163.com</span>
+                  </b>
+                </div>
+                <div>
+                  <b>
+                    <span style="font-size: larger">Github：</span>
+                    <span>Small-Happy-Bean</span>
+                  </b>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <b>
+                  <span style="font-size: larger" lang="zh"
+                    >接触过的开发语言：</span
+                  >
+                  <span style="font-size: larger" lang="en"
+                    >Developing language I used:
+                  </span>
+                </b>
+              </div>
+              <div>
+                <span style="font-size: small"
+                  >Python, Java, JavaScript, C#, Golang , C++, R, PHP ...</span
+                >
+              </div>
+            </div>
+            <div>
+              <div>
+                <b>
+                  <span style="font-size: larger" lang="zh">爱好：</span>
+                  <span style="font-size: larger" lang="en">Favorites:</span>
+                </b>
+              </div>
+              <div>
+                <span lang="zh">吃零食、画画、看漫画、记录想法...</span>
+                <span lang="en">Snacks, Painting, Manga, Recording...</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <b>
+                  <span style="font-size: larger" lang="zh"
+                    >可以做的事情：</span
+                  >
+                  <span style="font-size: larger" lang="en"
+                    >What I can do:</span
+                  >
+                </b>
+              </div>
+              <div>
+                <span lang="zh">一点一点地写代码......</span>
+                <span lang="en">Code as much as I can...</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <b>
+                  <span style="font-size: larger" lang="zh">不擅长：</span>
+                  <span style="font-size: larger" lang="en">Weakness:</span>
+                </b>
+              </div>
+              <div>
+                <span lang="zh">写复杂算法，集群配置，解决高并发......</span>
+                <span lang="en"
+                  >Complex algorithm, Cluster setting, High-concurrency
+                  solution...</span
+                >
+              </div>
+            </div>
+            <div class="flex_block3">
+              <div>
+                <div style="font-size: larger">
+                  <b>
+                    <span lang="zh">开发状况：</span>
+                    <span lang="en">What i know in dev: </span>
+                  </b>
+                </div>
+                <div style="font-size: small">
+                  <ul>
+                    <li>
+                      <span lang="zh">了解HTML、CSS和JavaScript</span>
+                      <span lang="en">HTML, CSS, JavaScript</span>
+                    </li>
+                    <li>
+                      <span lang="zh"
+                        >了解Vue、React、Angular和微信小程序开发</span
+                      >
+                      <span lang="en">Vue, React, Angular</span>
+                    </li>
+                    <li>
+                      <span lang="zh"
+                        >了解Pytorch、Keras，只会简单的机器学习</span
+                      >
+                      <span lang="en"
+                        >Pytorch, Keras, Simple machine learning</span
+                      >
+                    </li>
+                    <li>
+                      <span lang="zh"
+                        >了解SpringBoot、Django、Flask、ExpressJS</span
+                      >
+                      <span lang="en"
+                        >SpringBoot, Django, Flask, ExpressJS</span
+                      >
+                    </li>
+                    <li>
+                      <span lang="zh">使用过Android Studio</span>
+                      <span lang="en">Android Studio</span>
+                    </li>
+                    <li>
+                      <span lang="zh">使用过MongoDB、MySQL、PostgreSQL</span>
+                      <span lang="en">MongoDB, MySql, PostgresSQL</span>
+                    </li>
+                    <li>
+                      <span lang="zh"
+                        >了解Linux，使用过Ubuntu、Centos Stream</span
+                      >
+                      <span lang="en">Linux, like Ubuntu, Centos Stream</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: larger">
+                  <b>
+                    <span lang="zh">个人计划：</span>
+                    <span lang="en">Individual plan: </span>
+                  </b>
+                </div>
+                <div style="font-size: small">
+                  <ul>
+                    <li>
+                      <span lang="zh">硬件开发，以STM32和树莓派为主</span>
+                      <span lang="en"
+                        >Hardware development, mainly STM32 & Raspberry Pi</span
+                      >
+                    </li>
+                    <li>
+                      <span lang="zh"
+                        >深度学习，对Transformer和Mamba模型感兴趣</span
+                      >
+                      <span lang="en"
+                        >Deep learning, like Transformer & Mamba</span
+                      >
+                    </li>
+                    <li>
+                      <span lang="zh"
+                        >游戏开发，学习Unity引擎、Threejs、Pixijs等</span
+                      >
+                      <span lang="en"
+                        >GameDev, like Unity, Threejs, Pixijs...</span
+                      >
+                    </li>
+                    <li>
+                      <span lang="zh">作曲和画画</span>
+                      <span lang="en">Music production & Painting</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="freetime_works">
+          <div class="block_title">
+            <span lang="zh">闲暇时练习</span>
+            <span lang="en">Freetime Practices</span>
+          </div>
+          <div class="freetime_work_block">
+            <img
+              src="./static/images/freetimearts/prac1.png"
+              class="artwork_image"
+            />
+            <img
+              src="./static/images/freetimearts/prac2.png"
+              class="artwork_image"
+            />
+            <img
+              src="./static/images/freetimearts/prac3.png"
+              class="artwork_image"
+            />
+            <img
+              src="./static/images/freetimearts/prac4.png"
+              class="artwork_image"
+            />
+            <img
+              src="./static/images/freetimearts/prac5.png"
+              class="artwork_image"
+            />
+            <img
+              src="./static/images/freetimearts/prac6.png"
+              class="artwork_image"
+            />
+          </div>
+        </div>
+      </div>
+      <!--Already Done Projects-->
+      <div class="done_projects">
+        <div class="block_title">
+          <span lang="zh">参与的工作</span>
+          <span lang="en">Participated Works</span>
+        </div>
+        <div class="project_block_container">
+          <div class="project_block fade">
+            <div class="project_preview">
+              <img
+                src="./static/images/projectpreviews/beanweapp.png"
+                class="project_preview_image"
+              />
+            </div>
+            <div class="project_intro">
+              <div class="project_title">
+                <span lang="zh">黄豆刷刷</span>
+                <span lang="en">YellowBean Prac-Prac</span>
+              </div>
+              <div class="project_structure_text">
+                <div>
+                  WeChat Mini-App + Vue + Element Plus + SpringBoot + MongoDB
+                </div>
+              </div>
+              <div class="project_description_text">
+                <div>
+                  <span lang="zh"
+                    >2024年3月开启的黄豆小组项目。一款用于考研408科目刷题的题库小程序。<br />
+                    服务器端使用了基于向量相似度的推荐算法。预计2024年冬正式投入使用。<br />
+                    目前仍处于改进与测试阶段，另外计划申请著作权中......</span
+                  >
+                  <span lang="en"
+                    >The project of YellowBean Team starting from March, 2024. A
+                    WeChat Mini-App for Subject 408 (One subject of National
+                    Postgraduate Entrance Exam in China) questions practice.<br />
+                    Simple recommending algorithm based on vector similarity
+                    used on server side. To put into use in winter this year.<br />
+                    Now in promotion and test, while copyright applying...
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project_block fade">
+            <div class="project_preview">
+              <img
+                src="./static/images/projectpreviews/pictool.png"
+                class="project_preview_image"
+              />
+            </div>
+            <div class="project_intro">
+              <div class="project_title">
+                <span lang="zh">黄豆隐写工具</span>
+                <span lang="en">YellowBean Steganography Tool</span>
+              </div>
+              <div class="project_structure_text">
+                <div>PYQT5 + OPENCV + IMG</div>
+              </div>
+              <div class="project_description_text">
+                <span lang="zh"
+                  >简单的图像隐写工具。可对图片LSB隐写与MSB隐写，此外可生成灰色隐藏图片。<br />
+                  时间充裕的前提下计划升级到PYQT6或搭建网页端。</span
+                >
+
+                <span lang="en"
+                  >A simple image-steganography tool, hiding text in image with
+                  LSB and MSB methods besides producing "image-hided" image. To
+                  be upgraded to Web or PYQT6 if time available .
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="project_block fade">
+            <div class="project_preview">
+              <img
+                src="./static/images/projectpreviews/chatroom.png"
+                class="project_preview_image"
+              />
+            </div>
+            <div class="project_intro">
+              <div class="project_title">
+                <span lang="zh">红豆摸鱼聊天室</span>
+                <span lang="en">RedBean Freetime Chatroom</span>
+              </div>
+              <div class="project_structure_text">
+                <div>Vue + Element Plus + .NET Core</div>
+              </div>
+              <div class="project_description_text">
+                <span lang="zh"
+                  >简单的网页聊天室。同一房间内可以实现图片与文件的上传并展示。<br />
+                  时间允许的情况下会进一步升级。</span
+                >
+                <span lang="en"
+                  >A simple chatroom, where images and files could be uploaded
+                  and present in room chat, while still requiring further
+                  upgrading if needed.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="project_block fade">
+            <div class="project_preview">
+              <img
+                src="./static/images/projectpreviews/sumtool.png"
+                class="project_preview_image"
+              />
+            </div>
+            <div class="project_intro">
+              <div class="project_title">
+                <span lang="zh">绿豆文本总结工具</span>
+                <span lang="en">GreenBean Text-summarization Tool</span>
+              </div>
+              <div class="project_structure_text">
+                <div>Vue + Element Plus + Flask + Transformer + Pytorch</div>
+              </div>
+              <div class="project_description_text">
+                <span lang="zh"
+                  >课程设计期间结合BERT模型制作的一个文本总结工具，仅支持英文文本摘要。<br />
+                  未实现BERT模型中文定制化。计划有一天完成定制化目标。</span
+                >
+                <span lang="en"
+                  >A text-summarization web tool with pre-trained BERT model,
+                  made when studying Transformer in 7th semester design
+                  lesson.<br />
+                  Failed to build a customed BERT by myself that period but plan
+                  to build one in next future. Only English supported.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="project_block fade">
+            <div class="project_preview">
+              <img
+                src="./static/images/projectpreviews/stupiddetect.png"
+                class="project_preview_image"
+              />
+            </div>
+            <div class="project_intro">
+              <div class="project_title">
+                <span lang="zh">傻傻滴数字检测</span>
+                <span lang="en">Stu-Stupid Number Detection</span>
+              </div>
+              <div class="project_structure_text">
+                <div>Android + Flask + Pytorch</div>
+              </div>
+              <div class="project_description_text">
+                <span lang="zh"
+                  >修读“神经网络与深度学习”课程期间，制作的一款安卓APP。<br />
+                  联网环境下拍摄图片可得到数字检测结果。<br />
+                  服务器端目标检测使用了SSD模型。</span
+                >
+                <span lang="en"
+                  >An Android App made for simply detecting and recognizing
+                  numbers with SSD algorithm on server, when majoring in the
+                  lesson Neural Network and Deep Learning.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prev" onclick="plusSlides(-1)">&#9668;</div>
+        <div class="next" onclick="plusSlides(1)">&#9658;</div>
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="footer">
+        <div class="footer_text">
+          <div>
+            <span lang="zh">祝愿每天好心情~</span>
+            <span lang="en">Wish happiness everyday.</span>
+          </div>
+          <div>All Rights Reserved</div>
+        </div>
+      </div>
+    </div>
+    <!--The Script-->
+    <script type="text/javascript" src="./static/js/swiper.js"></script>
+  </body>
+</html>

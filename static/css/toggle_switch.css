@@ -1,0 +1,67 @@
+/* ! Reference in W3School HowTo */
+/* The Slider */
+.toggle_switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 48px;
+}
+
+.toggle_switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.round_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: small;
+  color: white;
+  text-align: center;
+  line-height: 48px;
+  user-select: none;
+}
+
+.round_slider:before {
+  position: absolute;
+  content: "";
+  height: 32px;
+  width: 32px;
+  left: 8px;
+  top: 8px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  mix-blend-mode: difference;
+}
+
+input:checked + .round_slider {
+  background-color: black;
+}
+
+input:focus + .round_slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .round_slider:before {
+  -webkit-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+}
+
+/* Rounded round_sliders */
+.round_slider.round {
+  border-radius: 24px;
+}
+
+.round_slider.round:before {
+  border-radius: 50%;
+}
