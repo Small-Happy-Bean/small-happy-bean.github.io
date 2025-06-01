@@ -1,0 +1,134 @@
+{
+  "devinfos": {
+    "zh": [
+      "了解HTML、CSS和JavaScript",
+      "了解Vue、React和微信小程序开发",
+      "了解PyTorch、Keras，简单的机器学习",
+      "了解SpringBoot、Django、FastAPI、Flask等框架",
+      "了解Linux，使用过Ubuntu、Centos Stream",
+      "使用过Android Studio",
+      "使用过MongoDB、MySQL、PostgreSQL"
+    ],
+    "en": [
+      "HTML, CSS, JavaScript",
+      "Vue, React, Angular",
+      "Sklearn, Keras, PyTorch, Simple machine learning",
+      "Flask, FastAPI, SpringBoot, Django",
+      "Android Studio",
+      "MongoDB, MySQL, PostgreSQL",
+      "Linux, like Ubuntu, Centos Stream"
+    ]
+  },
+  "indplans": {
+    "zh": [
+      "硬件开发，以STM32和树莓派为主",
+      "深度学习，基于Transformer架构研究设计",
+      "图形学学习，计划Threejs、D3、WebGL相关设计",
+      "作曲和画画......"
+    ],
+    "en": [
+      "Hardware development, mainly STM32 & Raspberry Pi",
+      "Deep learning, new Transformer-based design",
+      "Graphics learning, plans with Threejs, D3, WebGL etc.",
+      "Music production & Painting..."
+    ]
+  },
+  "artworks": [
+    "./static/images/freetimearts/prac1.png",
+    "./static/images/freetimearts/prac2.png",
+    "./static/images/freetimearts/prac3.png",
+    "./static/images/freetimearts/prac4.png",
+    "./static/images/freetimearts/prac5.png",
+    "./static/images/freetimearts/prac6.png"
+  ],
+  "projects": {
+    "zh": [
+      {
+        "title": "可可医疗咨询室",
+        "structure": "Vuetify + Go-Chi + FastAPI + PyTorch + MongoDB",
+        "description": "毕业设计期间开发的Web医疗咨询室，目前仅支持简单的咨询功能。Web前端使用了Vue和Vuetify。Web后端分为Web API和模型API，分别使用Go-Chi和FastAPI。模型端基于PyTorch，采用Transformer架构设计，其中中文模型的参数设置为：182-256-2-4-50000-(1e-5)（词典词汇量-词嵌入长度-解码器层数-注意力头数量-训练轮数-学习率）。数据库使用MongoDB存储。",
+        "preview": "./static/images/projectpreviews/cocoaroom.png"
+      },
+      {
+        "title": "黄豆邦邦",
+        "structure": "Phaser + Webpack/Vite",
+        "description": "为纪念黄豆小组的情谊开发的H5小游戏。小游戏基于Phaser开发，有分别采用Webpack和Vite打包构建。计划修复相关bug、增强平衡性、提升小游戏体验......",
+        "preview": "./static/images/projectpreviews/beangame.png"
+      },
+      {
+        "title": "黄豆刷刷",
+        "structure": "WeChat Mini-App + Vue + SpringBoot + Flask + MongoDB",
+        "description": "2024年3月启动的黄豆小组项目。一款用于考研408科目刷题的题库小程序。服务器端使用了基于向量相似度的推荐算法。已正式投入使用并运营。已申请软件著作权。",
+        "preview": "./static/images/projectpreviews/beanweapp.png"
+      },
+      {
+        "title": "黄豆隐写工具",
+        "structure": "PyQt + OpenCV + PIL",
+        "description": "数据分析课程设计期间开发的简单的图像隐写工具，支持LSB隐写和MSB隐写，此外可生成灰色隐藏图。计划升级软件UI或构建Web端。",
+        "preview": "./static/images/projectpreviews/pictool.png"
+      },
+      {
+        "title": "红豆摸鱼聊天室",
+        "structure": "Vue + Element Plus + .NET Core",
+        "description": "基于WebSocket的简单的网页聊天室。同一房间内可实现图片与文件的上传与展示。暂无改进计划。",
+        "preview": "./static/images/projectpreviews/chatroom.png"
+      },
+      {
+        "title": "绿豆文本总结工具",
+        "structure": "Vue + Element Plus + Flask + PyTorch + Hugging Face Transformer",
+        "description": "专业课程设计期间结合Hugging Face的Transformer库中预训练BERT模型开发的文本总结工具，仅支持英文。计划实现对中文的支持。",
+        "preview": "./static/images/projectpreviews/sumtool.png"
+      },
+      {
+        "title": "傻傻滴数字检测",
+        "structure": "Android + Flask + PyTorch",
+        "description": "修读深度学习与神经网络课程时开发的安卓APP。拍摄并上传图片即可得到检测到数字的结果。服务端目标检测模型使用了SSD算法。",
+        "preview": "./static/images/projectpreviews/stupiddetect.png"
+      }
+    ],
+    "en": [
+      {
+        "title": "Cocoa E-Consulting Room ",
+        "structure": "Vuetify, Go-Chi, FastAPI, PyTorch, MongoDB",
+        "description": "E-consulting room developed when capstone project, merely simple medical consultation supported. Frontend based on Vue and Vuetify, while backend Web API based on Go-Chi and Model API based on FastAPI. The core Transformer model is designed with PyTorch, the parameters of Chinese model are 182, 256, 2, 4, 50000, 1e-5(vocab_size, word_embedding_size, decoder_layer, multi_head_count, epoches, learning_rate). Database uses MongoDB.",
+        "preview": "./static/images/projectpreviews/cocoaroom.png"
+      },
+      {
+        "title": "Yellow Bean Bean",
+        "structure": "Phaser, Webpack/Vite",
+        "description": "H5 Mini-game for remembering the days in Yellow-Bean team, developed with Phaser. Different bundles with Webpack and Vite. Bug fixing and game balancing planned to improve the game experience...",
+        "preview": "./static/images/projectpreviews/beangame.png"
+      },
+      {
+        "title": "Yellow-Bean Prac-Prac",
+        "structure": "WeChat Mini-App, Vue, SpringBoot, Flask, MongoDB",
+        "description": "Project of Yellow-Bean Team starting from March, 2024.A WeChat Mini-App for question practice of Subject 408 (A subject of National Postgraduate Entrace Exam in China). Simple recommending algorithm based on vector similarity on server side. Already put into application and operation. Copyright registered.",
+        "preview": "./static/images/projectpreviews/beanweapp.png"
+      },
+      {
+        "title": "Yellow-Bean Steganography Tool",
+        "structure": "PyQt + OpenCV + PIL",
+        "description": "Simple image-steganography tool made during data analysis lesson design, supporting steganography of LSB and MSB, besides generating grey image-hidden images. To upgrade software interface or build Web side.",
+        "preview": "./static/images/projectpreviews/pictool.png"
+      },
+      {
+        "title": "Red-Bean Freetime Chat Room",
+        "structure": "Vue, Element Plus, .NET Core",
+        "description": "Simple web chat room based on WebSocket. Images and files can be uploaded and present the same room. No improving plan now.",
+        "preview": "./static/images/projectpreviews/chatroom.png"
+      },
+      {
+        "title": "Green-Bean Text Summarization Tool",
+        "structure": "Vue, Element Plus, Flask, PyTorch, Hugging Face Transformer",
+        "description": "Text summarization tool with pre-trained BERT in Hugging Face Transformers when major lesson design, only English supported. Plan to support Chinese.",
+        "preview": "./static/images/projectpreviews/sumtool.png"
+      },
+      {
+        "title": "Stu-Stupid Number Detection",
+        "structure": "Android, Flask, PyTorch",
+        "description": "Android APP developed when majoring lesson Deep Learning and Neural Network. Numbers can be detected after taking and uploading photos. Server side object detection model uses SSD algorithm.",
+        "preview": "./static/images/projectpreviews/stupiddetect.png"
+      }
+    ]
+  }
+}

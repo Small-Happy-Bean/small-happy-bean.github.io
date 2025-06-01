@@ -1,19 +1,19 @@
 /* ! Reference in W3School HowTo */
 /* The Slider */
-.toggle_switch {
+.toggle-switch {
   position: relative;
   display: inline-block;
   width: 80px;
   height: 48px;
 }
 
-.toggle_switch input {
+.toggle-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.round_slider {
+.round-slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -30,7 +30,7 @@
   user-select: none;
 }
 
-.round_slider:before {
+.round-slider:before {
   position: absolute;
   content: "";
   height: 32px;
@@ -43,25 +43,25 @@
   mix-blend-mode: difference;
 }
 
-input:checked + .round_slider {
+input:checked + .round-slider {
   background-color: black;
 }
 
-input:focus + .round_slider {
+input:focus + .round-slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .round_slider:before {
+input:checked + .round-slider:before {
   -webkit-transform: translateX(32px);
   -ms-transform: translateX(32px);
   transform: translateX(32px);
 }
 
-/* Rounded round_sliders */
-.round_slider.round {
+/* Rounded round-sliders */
+.round-slider.round {
   border-radius: 24px;
 }
 
-.round_slider.round:before {
+.round-slider.round:before {
   border-radius: 50%;
 }

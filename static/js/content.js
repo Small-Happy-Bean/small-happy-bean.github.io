@@ -1,118 +1,162 @@
-// async function setContentByLanguage(lang_choice) {
-//     let projects_data = []
-//     let footer_texts = []
-//     let data_with_lang = await getContentFromJson()
+// Scripts to test how to create dom with js rather than write in html
 
+// Init global lang_option
+let lang_option = false;
 
+// Get content data from json
+async function getContentFromJson() {
+  let json_data = await fetch("./assets/json/contents.json")
+    .then((res) => res.json())
+    .then((res) => {
+      //   console.log(res);
+      return res;
+    });
+  return json_data;
+}
 
-//     let header_content = document.querySelectorAll(".header_content")
+// Init content DOM
+async function initContentElement(lang_set) {
+  let lang_option = lang_set ? "en" : "zh";
+  let raw_data = await getContentFromJson();
+  // console.log(raw_data);
 
-//     let self_intro = document.querySelectorAll(".self_intro")
-//     let freetime_works = document.querySelectorAll(".freetime_works")
+  // Init devinfo unordered list
+  let devinfos = raw_data["devinfos"][lang_option];
+  let devinfo_ulist = document.querySelector(".devinfo-ulist");
+  for (let devinfo_index in devinfos) {
+    let devinfo_li = document.createElement("li");
+    devinfo_li.innerText = devinfos[devinfo_index];
+    devinfo_ulist.appendChild(devinfo_li);
+  }
 
-//     let done_projects = document.querySelectorAll(".done_projects")
+  // Init indplan unordered list
+  let indplans = raw_data["indplans"][lang_option];
+  let indplan_ulist = document.querySelector(".indplan-ulist");
+  for (let indplan_index in indplans) {
+    let indplan_li = document.createElement("li");
+    indplan_li.innerText = indplans[indplan_index];
+    indplan_ulist.appendChild(indplan_li);
+  }
 
-//     let dot_container = document.querySelectorAll(".dot_container")
-//     let footer = document.querySelectorAll(".footer")
+  // Init artwork images
+  let artwork_links = raw_data["artworks"];
+  let freetime_work_block = document.querySelector(".freetime-work-block");
+  for (let artwork_link_index in artwork_links) {
+    let artwork_image = document.createElement("img");
+    artwork_image.className = "artwork-image";
+    artwork_image.src = artwork_links[artwork_link_index];
+    freetime_work_block.appendChild(artwork_image);
+  }
 
+  // Init project blocks
+  let projects = raw_data["projects"][lang_option];
+  let projects_container = document.querySelector(".project-block-container");
+  let dot_container = document.querySelector(".dot-container");
+  // Loop and init
+  for (let project_index in projects) {
+    // Dot span
+    let dot_span = document.createElement("span");
+    dot_span.className = "dot";
+    dot_span.onclick = function () {
+      currentSlide(project_index);
+    };
+    // Project block
+    let project_block = document.createElement("div");
+    project_block.className = "project-block fade";
+    // Project preview part
+    let project_preview = document.createElement("div");
+    project_preview.className = "project-preview";
+    // Project preview image
+    let project_preview_image = document.createElement("img");
+    project_preview_image.className = "project-preview-image";
+    project_preview_image.src = projects[project_index]["preview"];
+    project_preview_image.alt = "Preview Image No Found!";
+    // Project intro part
+    let project_intro = document.createElement("div");
+    project_intro.className = "project-intro";
+    // Project title
+    let project_title = document.createElement("div");
+    project_title.className = "project-title";
+    project_title.innerText = projects[project_index]["title"];
+    // Project structure text
+    let project_structure_text = document.createElement("div");
+    project_structure_text.className = "project-structure-text";
+    project_structure_text.innerText = projects[project_index]["structure"];
+    // Project description text
+    let project_description_text = document.createElement("div");
+    project_description_text.className = "project-description-text";
+    project_description_text.innerText = projects[project_index]["description"];
+    // Final project block
+    project_preview.appendChild(project_preview_image);
+    project_intro.appendChild(project_title);
+    project_intro.appendChild(project_structure_text);
+    project_intro.appendChild(project_description_text);
+    project_block.appendChild(project_preview);
+    project_block.appendChild(project_intro);
+    // Whole project container and dot container
+    dot_container.appendChild(dot_span);
+    projects_container.appendChild(project_block);
+  }
+  // Check the length between real dom and json data
+  let devinfo_list_child_node_len = devinfo_ulist.childElementCount;
+  let indplan_list_child_node_len = indplan_ulist.childElementCount;
+  let artwork_block_child_node_len = freetime_work_block.childElementCount;
+  let project_container_child_node_len = projects_container.childElementCount;
+  let is_all_len_valid =
+    devinfo_list_child_node_len === devinfos.length &&
+    indplan_list_child_node_len === indplans.length &&
+    artwork_block_child_node_len === artwork_links.length &&
+    project_container_child_node_len === projects.length;
+  return is_all_len_valid;
+}
 
-//     let block_titles = data_with_lang["block_titles"]
-//     console.log(block_titles)
-//     console.log(data_with_lang)
-//     console.log(data_with_lang["block_titles"])
-//     console.log(data_with_lang["header_text"]["header_title"])
+// Update content dom with language
+function updateContentElement(lang_set) {
+  let lang_option = lang_set ? "en" : "zh";
+  getContentFromJson().then((data) => {
+    // Get the data by language choice
 
-//     // Add Block Title
-//     let block_title1 = document.createElement("div")
-//     let block_title2 = document.createElement("div")
-//     let block_title3 = document.createElement("div")
-//     block_title1.className = "block_title"
-//     block_title2.className = "block_title"
-//     block_title3.className = "block_title"
-//     block_title1.textContent = block_titles[0]
-//     block_title2.textContent = block_titles[1]
-//     block_title3.textContent = block_titles[2]
-//     self_intro[0].appendChild(block_title1)
-//     freetime_works[0].appendChild(block_title2)
-//     done_projects[0].prepend(block_title3)
+    let devinfos = data["devinfos"][lang_option];
+    let indplans = data["indplans"][lang_option];
+    let projects = data["projects"][lang_option];
+    // Elements to update
 
+    // Update devinfo unordered list
+    let devinfo_lis = document.querySelectorAll(".devinfo-ulist li");
+    for (let devinfo_index in devinfo_lis) {
+      devinfo_lis[devinfo_index].innerText = devinfos[devinfo_index];
+    }
 
+    // Update indplan unordered list
+    let indplan_lis = document.querySelectorAll(".indplan-ulist li");
+    for (let indplan_index in indplan_lis) {
+      indplan_lis[indplan_index].innerText = indplans[indplan_index];
+    }
 
-//     // The header part
-//     let header_title = document.createElement("div")
-//     let header_description = document.createElement("div")
-//     header_title.className = "header_title"
-//     header_description.className = "header_description"
-//     header_title.textContent = data_with_lang["header_text"]["header_title"]
-//     header_description.textContent = data_with_lang["header_text"]["header_description"]
-//     header_content[0].appendChild(header_title)
-//     header_content[0].appendChild(header_description)
+    // Update project block
+    let project_titles = document.querySelectorAll(".project-title");
+    let project_structure_texts = document.querySelectorAll(
+      ".project-structure-text"
+    );
+    let project_description_texts = document.querySelectorAll(
+      ".project-description-text"
+    );
+    for (let project_index in projects) {
+      project_titles[project_index].innerText =
+        projects[project_index]["title"];
+      project_structure_texts[project_index].innerText =
+        projects[project_index]["structure"];
+      project_description_texts[project_index].innerText =
+        projects[project_index]["description"];
+    }
+    // Check the length of the elements the same as project json data...
+    // console.log(project_titles.length);
+    // console.log(project_description_texts.length);
+    // console.log(project_structure_texts.length);
+  });
+}
 
-//     // header_description.textContent = json_data
-
-//     // The project part
-//     // ! Should add a judgement of array but now no need?
-    
-
-
-
-//     projects_data = data_with_lang["projects"]
-//     projects_data.forEach(item => {
-//         console.log(item)
-//         let project_block = document.createElement("div")
-//         let dot_element = document.createElement("span")
-//         dot_element.className = "dot"
-//         project_block.className = "project_block fade"
-//         // Project_preview part
-//         let project_preview = document.createElement("div")
-//         let project_preview_image = document.createElement("img")
-
-
-//         let project_intro = document.createElement("div")
-//         let project_title = document.createElement("div")
-//         let project_structure_intro = document.createElement("div")
-//         let project_description_intro = document.createElement("div")
-
-//         project_intro.className = "project_intro"
-//         project_title.className = "project_title"
-
-//         project_title.textContent = item["name"]
-//         project_structure_intro.textContent = item["structure"]
-//         project_description_intro.textContent = item["intro"]
-
-
-//         project_intro.append(project_title, project_structure_intro, project_description_intro)
-
-//         project_block.append(project_preview, project_intro)
-
-//         done_projects[0].append(project_block)
-//         dot_container[0].append(dot_element)
-//     })
-
-//     // The footer part
-//     footer_texts = data_with_lang["footer_text"]
-//     console.log(footer_texts)
-//     footer_texts.forEach(item => {
-//         let footer_text_block = document.createElement("div")
-//         footer_text_block.textContent = item
-//         footer[0].appendChild(footer_text_block)
-
-//     })
-//     console.log(data_with_lang["self_intro"])
-//     console.log(data_with_lang["self_intro"]["develop_experience"])
-//     console.log(data_with_lang["self_intro"]["individual_plan"])
-// }
-
-// async function getContentFromJson() {
-//     let json_data = {}
-//     await fetch("./assets/json/content.json")
-//         .then(res => res.json())
-//         .then(res => {
-//             // console.log(res)
-//             json_data = res["zh-CN-Content"]
-//         })
-//     // console.log(json_data)
-//     return json_data
-// }
-
-// setContentByLanguage()
+// Init the content element
+initContentElement(lang_option).then(() => {
+  showSlides(slide_index);
+});
