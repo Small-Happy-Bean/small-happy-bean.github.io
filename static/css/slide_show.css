@@ -67,7 +67,7 @@
 /* The dots/bullets/indicators */
 .dot-container {
   text-align: center;
-  padding: 0 0 8px;
+  padding: 8px;
 }
 
 .dot {
@@ -109,3 +109,4 @@
     font-size: 12px;
   }
 }
+
