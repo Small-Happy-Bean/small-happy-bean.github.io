@@ -1,7 +1,12 @@
 // Switch the language
+// ! Language switch from toggling to radio check
 function languageSwitch() {
-  let toggle_check = document.getElementsByClassName("toggle-check");
-  let is_checked = toggle_check[0].checked;
+  let radios = document.getElementsByName("langOption");
+  console.log(radios);
+  let is_checked = !radios[0].checked;
+  // let toggle_check = document.getElementsByClassName("toggle-check");
+  // let is_checked = toggle_check[0].checked;
+  //
   let zh_span = document.querySelectorAll("span[lang=zh]");
   let en_span = document.querySelectorAll("span[lang=en]");
   // console.log(is_checked)

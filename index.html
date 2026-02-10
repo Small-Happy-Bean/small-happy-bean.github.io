@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-cn-Hans-CN">
   <head>
     <title>小乐的乌龙茶空间</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="柠檬水IO空间" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="乌龙茶空间" />
+    <meta name="keywords" content="苦涩,简单,展示页" />
     <!-- For Github IO Page displaying ICO on firefox problem -->
     <!-- Not so clear on Brave -->
     <!-- If React, Vue, Angular, just rel=icon and href=/favicon.ico can be OK -->
     <link rel="icon" type="image/x-icon" href="./favicon.ico?" />
     <link rel="stylesheet" href="./static/css/style.css" />
-    <link rel="stylesheet" href="./static/css/toggle_switch.css" />
+    <!-- <link rel="stylesheet" href="./static/css/toggle_switch.css" /> -->
     <link rel="stylesheet" href="./static/css/slide_show.css" />
   </head>
   <body>
@@ -20,8 +21,29 @@
         <div class="header-bar">
           <!--A Rounded Toggle Switch for Language Switch-->
           <!--Reference: W3School How To-->
-          <div style="display: flex">
-            <label class="toggle-switch">
+          <div style="display: flex; color: white">
+            <div class="lang-set-hint">语言/Language</div>
+            <div class="lang-set-radios">
+              <input
+                type="radio"
+                id="langOption1"
+                onclick="languageSwitch()"
+                name="langOption"
+                value="ZH"
+                checked
+              />
+              <label for="langOption1" class="lang-set-label">中文</label>
+              <input
+                type="radio"
+                id="langOption2"
+                onclick="languageSwitch()"
+                name="langOption"
+                value="EN"
+              />
+              <label for="langOption2" class="lang-set-label">EN</label>
+            </div>
+            <!-- Desperated toggle switch in 2026  -->
+            <!-- <label class="toggle-switch">
               <input
                 type="checkbox"
                 class="toggle-check"
@@ -30,25 +52,27 @@
               <span class="round-slider round"
                 >ZH&nbsp;&nbsp;&nbsp;&nbsp;EN</span
               >
-            </label>
+            </label> -->
           </div>
         </div>
-        <div class="header-title">
+        <h1 class="header-title">
           <span lang="zh">乌龙茶空间</span>
           <span lang="en">Oolong Space</span>
-        </div>
-        <div class="header-description">
-          <span lang="zh">乌龙茶可没有比现实苦涩...</span>
-          <span lang="en">Oolong no more bitter than the fact... </span>
-        </div>
+        </h1>
+        <h2 class="header-description">
+          <span lang="zh">品尝过真实以后，才发现远比乌龙茶苦涩......</span>
+          <span lang="en"
+            >The fact tasted, I found that far bitterer than Oolong...</span
+          >
+        </h2>
       </div>
-      <!--Self Introduction-->
+      <!-- ! Self Introduction-->
       <div class="main-intro">
         <div class="self-intro">
-          <div class="block-title">
+          <h2 class="block-title">
             <span lang="zh">个人介绍</span>
-            <span lang="en">Self Introduction</span>
-          </div>
+            <span lang="en">Introduction</span>
+          </h2>
           <div class="intro-block">
             <div class="flex-block2">
               <div class="flex-block1">
@@ -61,13 +85,13 @@
                   </div>
                   <div style="margin: auto">
                     <span style="font-size: 18px" lang="zh">9月3日</span>
-                    <span style="font-size: 18px" lang="en">September 3rd</span>
+                    <span style="font-size: 18px" lang="en">09.03</span>
                   </div>
                 </div>
                 <div>
                   <b>
                     <span lang="zh">本科-USST-数据科学与大数据技术</span>
-                    <span lang="en">Undergraduate-USST-Data Science</span>
+                    <span lang="en">Bachelor-USST-Data Science</span>
                   </b>
                 </div>
               </div>
@@ -88,14 +112,14 @@
             </div>
             <div>
               <b>
-                <span style="font-size: 18px; margin-right: 4px" lang="zh"
-                  >开发语言：</span
-                >
+                <span style="font-size: 18px; margin-right: 4px" lang="zh">
+                  开发语言：
+                </span>
                 <span style="font-size: 18px; margin-right: 8px" lang="en"
-                  >Programming languages:
+                  >Dev languages:
                 </span>
               </b>
-              <span>Python, Java, JavaScript, C#, Go, PHP ...</span>
+              <span>Python, JavaScript, Java, C#, PHP ...</span>
             </div>
             <div>
               <b>
@@ -106,11 +130,8 @@
                   >Favorites:</span
                 >
               </b>
-
-              <span lang="zh">画画、听音乐、看漫画、吃零食、记录想法...</span>
-              <span lang="en"
-                >Painting, Music, Manga, Snacks, Recording...</span
-              >
+              <span lang="zh">阅读，看知乎</span>
+              <span lang="en">Reading, Surfing Zhihu ...</span>
             </div>
             <div>
               <b>
@@ -118,11 +139,11 @@
                   >经常做的事情：</span
                 >
                 <span style="font-size: 18px; margin-right: 8px" lang="en"
-                  >Things often to do:
+                  >Things usually to do:
                 </span>
               </b>
-              <span lang="zh">一点一点写代码......</span>
-              <span lang="en">Coding bit by bit...</span>
+              <span lang="zh">写代码，查资料，与大模型聊天</span>
+              <span lang="en">Coding, Looking up, Chatting with LLMs</span>
             </div>
             <div>
               <b>
@@ -130,15 +151,13 @@
                   >不擅长的事情：</span
                 >
                 <span style="font-size: 18px; margin-right: 8px" lang="en"
-                  >Weakness:</span
+                  >Things not good at:</span
                 >
               </b>
-              <span lang="zh"
-                >太复杂的算法，集群配置，传说中的高并发......</span
-              >
+              <span lang="zh">复杂算法，集群配置，所谓“高并发” </span>
               <span lang="en"
-                >Too complicated algorithm, Cluster setting up, High-concurrency
-                solution ...</span
+                >Complicated algorithm, Cluster setting up, so-called
+                High-concurrency solution ...</span
               >
             </div>
             <div class="flex-block3">
@@ -152,8 +171,6 @@
                 <div style="font-size: 16px">
                   <ul class="devinfo-ulist"></ul>
                 </div>
-              </div>
-              <div>
                 <div style="font-size: 20px">
                   <b>
                     <span lang="zh">个人计划：</span>
@@ -168,30 +185,33 @@
           </div>
         </div>
         <div class="freetime-works">
-          <div class="block-title">
+          <h2 class="block-title">
             <span lang="zh">闲暇练习</span>
             <span lang="en">Freetime Practices</span>
-          </div>
+          </h2>
           <div class="freetime-work-block"></div>
         </div>
       </div>
       <!--Already Done Projects-->
       <div class="done-projects">
-        <div class="block-title">
+        <h2 class="block-title">
           <span lang="zh">参与工作</span>
           <span lang="en">Participated Works</span>
-        </div>
+        </h2>
         <div class="project-block-container"></div>
-        <div class="prev" onclick="plusSlides(-1)">&#9668;</div>
-        <div class="next" onclick="plusSlides(1)">&#9658;</div>
+        <div class="slide-box">
+          <div class="prev" onclick="plusSlides(-1)">&#9664;</div>
+          <div class="next" onclick="plusSlides(1)">&#9654;</div>
+        </div>
+
         <div class="dot-container"></div>
       </div>
       <!--Footer-->
       <div class="footer">
         <div class="footer-text">
-          <span lang="zh">那些苦涩的，散去又吹来</span>
-          <span lang="en">Those bitter days, ebb and flow</span>
-          <div style="font-weight: bold; font-size: 20px">
+          <span lang="zh">105，重置你的命运；710，创造你的命运。</span>
+          <span lang="en">105-Reroll your destiny; 710-Make your destiny.</span>
+          <div style="font-weight: bold; font-size: 18px; margin-top: 8px">
             All Rights Reserved
           </div>
         </div>

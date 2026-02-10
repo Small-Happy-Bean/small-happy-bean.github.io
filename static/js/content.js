@@ -78,6 +78,11 @@ async function initContentElement(lang_set) {
     let project_title = document.createElement("div");
     project_title.className = "project-title";
     project_title.innerText = projects[project_index]["title"];
+    // & Add New
+    // Project time
+    let project_time = document.createElement("div");
+    project_time.className = "project-time";
+    project_time.innerText = projects[project_index]["time"];
     // Project structure text
     let project_structure_text = document.createElement("div");
     project_structure_text.className = "project-structure-text";
@@ -89,6 +94,7 @@ async function initContentElement(lang_set) {
     // Final project block
     project_preview.appendChild(project_preview_image);
     project_intro.appendChild(project_title);
+    project_intro.appendChild(project_time);
     project_intro.appendChild(project_structure_text);
     project_intro.appendChild(project_description_text);
     project_block.appendChild(project_preview);
@@ -135,15 +141,17 @@ function updateContentElement(lang_set) {
 
     // Update project block
     let project_titles = document.querySelectorAll(".project-title");
+    let project_times = document.querySelectorAll(".project-time");
     let project_structure_texts = document.querySelectorAll(
-      ".project-structure-text"
+      ".project-structure-text",
     );
     let project_description_texts = document.querySelectorAll(
-      ".project-description-text"
+      ".project-description-text",
     );
     for (let project_index in projects) {
       project_titles[project_index].innerText =
         projects[project_index]["title"];
+      project_times[project_index].innerText = projects[project_index]["time"];
       project_structure_texts[project_index].innerText =
         projects[project_index]["structure"];
       project_description_texts[project_index].innerText =
